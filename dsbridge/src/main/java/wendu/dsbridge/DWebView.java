@@ -33,6 +33,7 @@ import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
+import java.util.Locale;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
