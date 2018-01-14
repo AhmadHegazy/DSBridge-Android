@@ -630,9 +630,9 @@ public class DWebView extends WebView {
     public void callHandler(String method, Object[] args, final OnReturnValue handler) {
         if (args == null) args = new Object[0];
         String arg = new JSONArray(Arrays.asList(args)).toString();
-        String script = String.format("(window._dsf.%s||window.%s).apply(window._dsf||window,%s)", method,method, arg);
+        String script = String.format(Locale.ENGLISH,"(window._dsf.%s||window.%s).apply(window._dsf||window,%s)", method,method, arg);
         if(handler!=null){
-            script = String.format("%s.returnValue(%d,%s)",BRIDGE_NAME,callID, script);
+            script = String.format(Locale.ENGLISH,"%s.returnValue(%d,%s)",BRIDGE_NAME,callID, script);
             handlerMap.put(callID++, handler);
         }
         evaluateJavascript(script);
